@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid;
+      }
+    </style>
+
     <title>Documentation</title>
   </head>
   <body>
@@ -13,5 +27,101 @@
       directors and genres. Users will be able to sign up, update their personal
       information, and create a list of their favorite movies.
     </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Intended Task</th>
+          <th>Request Method</th>
+          <th>URL Endpoint</th>
+          <th>Query parameters endpoint</th>
+          <th>Data in request body</th>
+          <th>Data in Response body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Return a list of ALL movies to the user</td>
+          <td>GET</td>
+          <td>/movies</td>
+          <td>-</td>
+          <th>-</th>
+          <th>JSON</th>
+        </tr>
+        <tr>
+          <td>
+            Return data (description, genre, director, image URL, whether it’s
+            featured or not) about a single movie by title to the user
+          </td>
+          <td>GET</td>
+          <td>/movies/:title</td>
+          <td>:title = Enter the title of the movie here</td>
+          <td>-</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Return data about a genre (description) by name/title</td>
+          <td>GET</td>
+          <td>/movies/genre/:genreName</td>
+          <td>:genreName = Enter the name of the genre here</td>
+          <td>-</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>
+            Return data about a director (bio, birth year, death year) by name
+          </td>
+          <td>GET</td>
+          <td>/movies/directors/:directorName</td>
+          <td>:directorName = enter name of director here</td>
+          <td>-</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>POST</td>
+          <td>/users</td>
+          <td>-</td>
+          <td>JSON with infos about new user</td>
+          <td>JSON with infos about new user</td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user info (username)</td>
+          <td>PUT</td>
+          <td>/users/:id</td>
+          <td>:id = id of the user whose name should be changed</td>
+          <td>JSON including new username of user</td>
+          <td>return status OK</td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites</td>
+          <td>POST</td>
+          <td>/users/:id/:movieTitle</td>
+          <td>
+            :id = identify user by id; :movieTitle = add new favorite movie
+            title here
+          </td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Allow users to remove a movie from their list of favorites</td>
+          <td>DELETE</td>
+          <td>/users/:id/:movieTitle</td>
+          <td>
+            :id = identify user by id; : enter movie title to be deleted here
+          </td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Allow existing users to deregister</td>
+          <td>DELETE</td>
+          <td>/users/:id/</td>
+          <td>:id enter user id here</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

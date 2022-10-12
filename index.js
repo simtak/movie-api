@@ -6,135 +6,57 @@ const uuid = require("uuid");
 
 app.use(bodyParser.json());
 
-let movies = [
-  {
-    Title: "Star Wars",
-    Description: "Something with stars",
-  },
-];
-let users = [];
+//Read
+
+app.get("/movies", (req, res) => {
+  res.send("Successful GET request returning all movies");
+});
+
+//Read
+app.get("/movies/:title", (req, res) => {
+  res.send("Successful GET request returning data only !! on requested movie");
+});
+
+//Read
+app.get("/movies/genre/:genreName", (req, res) => {
+  res.send("Successful GET request about genre infos ");
+});
+
+//Read
+app.get("/movies/directors/:directorName", (req, res) => {
+  res.send("Successful GET request about director infos ");
+});
 
 //Create
 
 app.post("/users", (req, res) => {
-  const newUser = req.body;
-
-  if (newUser.name) {
-    newUser.id = uuid.v4();
-    users.push(newUser);
-    res.status(201).json(newUser);
-  } else {
-    res.status(400).send("users need name");
-  }
+  res.send("Successful POST request for new user ");
 });
 
 //Update
 
 app.put("/users/:id", (req, res) => {
-  const { id } = req.params;
-  const updatedUser = req.body;
-
-  let user = users.find((user) => user.id == id);
-
-  if (user) {
-    user.name = updatedUser.name;
-    res.status(200).json(user);
-  } else {
-    res.status(400);
-  }
+  res.send("Successful PUT request to update username ");
 });
 
 //Create
 
 app.post("/users/:id/:movieTitle", (req, res) => {
-  const { id, movieTitle } = req.params;
-
-  let user = users.find((user) => user.id == id);
-
-  if (user) {
-    user.favoriteMovies.push(movieTitle);
-    res.status(200);
-  } else {
-    res.status(400);
-  }
+  res.send("Successful POST request about new favorite movie by user ");
 });
 
 //Delete
 
 app.delete("/users/:id/:movieTitle", (req, res) => {
-  const { id, movieTitle } = req.params;
-
-  let user = users.find((user) => user.id == id);
-
-  if (user) {
-    user.favoriteMovies = user.favoriteMovies.filter(
-      (title) => title !== movieTitle
-    );
-    res.status(200);
-  } else {
-    res.status(400);
-  }
+  res.send(
+    "Successful DELETE request, deleting favorite movie from specified user "
+  );
 });
 
 //Delete
 
 app.delete("/users/:id/", (req, res) => {
-  const { id } = req.params;
-
-  let user = users.find((user) => user.id == id);
-
-  if (user) {
-    user = user.filter((user) => user.id != id);
-    res.status(200);
-  } else {
-    res.status(400);
-  }
-});
-
-//Read
-
-app.get("/movies", (req, res) => {
-  res.status(200).json(movies);
-});
-
-//Read
-app.get("/movies/:title", (req, res) => {
-  const { title } = req.params;
-  const movie = movies.find(function (movie) {
-    movie.Title === title;
-  });
-  if (movie) {
-    res.status(200).json(movie);
-  } else {
-    res.status(404).send("no such movie");
-  }
-});
-
-//Read
-app.get("/movies/genre/:genreName", (req, res) => {
-  const genreName = req.params.genreName;
-  const genre = movies.find(function (movie) {
-    movie.Genre.Name === genreName;
-  }).Genre;
-  if (genre) {
-    res.status(200).json(genre);
-  } else {
-    res.status(404).send("no such genre");
-  }
-});
-
-//Read
-app.get("/movies/directors/:directorName", (req, res) => {
-  const directorName = req.params.directorName;
-  const director = movies.find(function (movie) {
-    movie.Director.Name === directorName;
-  }).Director;
-
-  if (director) {
-    res.status(200).json(director);
-  } else {
-    res.status(404).send("no such director");
-  }
+  res.send("Successful DELETE deleting user ");
 });
 
 //
