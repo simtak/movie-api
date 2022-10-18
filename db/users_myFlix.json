@@ -1,0 +1,4 @@
+{"_id":{"$oid":"6349499dbca3240f53a46446"},"username":"Hannes1389","password":654332.0,"email":"Hannes@gmail.com","birthday":{"$date":"1987-06-19T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"63494ab3bca3240f53a46452"},[{"$oid":"63494aa5bca3240f53a46451"}],{"$oid":"63494aa5bca3240f53a46451"},{"$oid":"63494aa5bca3240f53a46451"}]}
+{"_id":{"$oid":"634949c0bca3240f53a46447"},"username":"Manne1389","password":987654.0,"email":"Manne@gmail.com","birthday":{"$date":"1983-02-26T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"63494ab3bca3240f53a46452"}]}
+{"_id":{"$oid":"634949cfbca3240f53a46448"},"username":"Schmeis1389","password":867594.0,"email":"Schmeis@gmail.com","birthday":{"$date":"1975-03-19T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"63494ab3bca3240f53a46452"}]}
+{"_id":{"$oid":"634949e2bca3240f53a46449"},"username":"Ralle1389","password":594382.0,"email":"Ralle@gmail.com","birthday":{"$date":"1980-12-19T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"63494ab3bca3240f53a46452"}]}
