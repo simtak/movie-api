@@ -95,10 +95,9 @@
         <tr>
           <td>Allow users to add a movie to their list of favorites</td>
           <td>POST</td>
-          <td>/users/:id/:movieTitle</td>
+          <td>/users/:Username/movies/:MovieID</td>
           <td>
-            :id = identify user by id; :movieTitle = add new favorite movie
-            title here
+            :username of user; :movieID = add new favorite movie here by ID
           </td>
           <td>-</td>
           <td>-</td>
@@ -106,9 +105,10 @@
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
           <td>DELETE</td>
-          <td>/users/:id/:movieTitle</td>
+          <td>/users/:Username/movies/:MovieID</td>
           <td>
-            :id = identify user by id; : enter movie title to be deleted here
+            :username of user; :movieID = add favorite movie to be deleted here
+            by ID
           </td>
           <td>-</td>
           <td>-</td>
@@ -116,8 +116,8 @@
         <tr>
           <td>Allow existing users to deregister</td>
           <td>DELETE</td>
-          <td>/users/:id/</td>
-          <td>:id enter user id here</td>
+          <td>/users/:username</td>
+          <td>:username = enter username of user to be deleted here</td>
           <td>-</td>
           <td>-</td>
         </tr>
