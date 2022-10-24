@@ -240,31 +240,7 @@ app.delete(
 //
 
 // listen for requests
-app.listen(8080, () => {
-  console.log("Your app is listening on port 8080.");
+const port = process.env.PORT || 8080;
+app.listen(port, "0.0.0.0", () => {
+  console.log("Listening on Port " + port);
 });
-
-// // middleware/////////////////////
-// app.use(morgan("common"));
-// app.use(express.static("public"));
-
-// // GET request
-
-// // *Test Error code*
-// // app.get("*", function routeHandler() {
-// //     throw new Error("Oops!");
-// //   });
-
-// app.get("/movies", (req, res) => {
-//   res.json(topMovies);
-// });
-
-// app.get("/", (res, req) => {
-//   req.send("Welcome to my Movie API");
-// });
-
-// //error handling
-// app.use((err, req, res, next) => {
-//   console.log(err.stack);
-//   res.status(500).send("Something broke!");
-// });
